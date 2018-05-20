@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+
+
+    <script>
+    //https://www.youtube.com/watch?v=FQ5wzI_DBk8&index=2&list=PLOpdT8GIZ4XX5regE8svPP97VarRqSeAD
+
+    //Квантификаторы
+    //{n} - n количество символов
+    var pattern=/\w{3}/; //слово длинною три
+    var pattern=/\w{3, 10}/; //слово длинною от 3 до 10 символов
+
+    // ? = {0,1} - нуль или один
+    // * = {0,} - нуль или более
+    // . - любой символ
+    var str="Камиль камиль каиль каммммиль kamil";
+
+    var patternThree=/кам?иль/ig;  //выбираем слово камиль где буква m встречается нуль или один раз
+    var patternFour=/кам*иль/ig;  //выбираем слово камиль где буква m встречается нуль или более раз
+    console.log(str.match(patternThree));
+    console.log(str.match(patternFour));
+
+    var link='<a href="http://kamil-abzalov.ru" class="myTest" hanik="2">ссылка</a>';
+    var patternFive= /href=".+"/gi;  //жадный поиск
+    console.log(link.match(patternFive));
+
+    var patternSix=/href=".+?"/gi ; //ленивый поиск
+    console.log(link.match(patternSix));
+
+    var patternSeven=/href="[^"]+"/gi ; 
+    console.log(link.match(patternSeven));
+
+    /* 
+
+
+    */
+
+    var str="0.2 4553 4555ff.5334 0.458 ffff.4334 fdfdf 0.4 trr 0.5"
+    var pattern= /[0-9]+\.[0-9]{1}(?=( |$))/g
+
+    console.log(str.match(pattern));
+
+    var str="17.07.2016 df18.07.2018"
+    var pattern= /\d{2}\.\d{2}\.\d{4}/g
+    console.log(str.match(pattern));
+
+    var str="17.07.2016 df18.07.2018"
+    var pattern= /\d{2}\.\d{2}\.\d{4}/g
+    console.log(str.match(pattern));
+
+
+    var str="<h3>Первый заголовок</h3><h1></h1><h3></h3> <h2>Второй заголовок</h2>"
+    var pattern= /<h[0-6]>(.*?)<\/h[0-6]>/g
+    console.log(str.match(pattern));
+
+    </script>
+
+</body>
+
+</html>

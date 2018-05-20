@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+
+
+    <script>
+        //https://www.youtube.com/watch?v=i7S6y1Ajvhw&index=1&list=PLOpdT8GIZ4XX5regE8svPP97VarRqSeAD
+
+        var str = "Продолжаем изучать род регулярные выражения";
+        var pattern = /род/g;
+
+
+        console.log(pattern.lastIndex); //0
+        console.log(pattern.test(str));
+        console.log(pattern.lastIndex); //4
+        console.log(pattern.exec(str));
+        console.log(pattern.lastIndex); //22
+        console.log(pattern.exec(str));
+        console.log(pattern.lastIndex); //0
+
+        // Ситаксис
+
+        /*
+        ** \d - любая цифра (digit)
+        ** \s - пробел, табуляция (space)
+        ** \w - слово, буква(латинские) + "_"
+        ** \b - граница слова
+        */
+
+        var patternDigit=/\d/g; //поиск цифры
+        var patternStr= /HTML\d/ //поиск строки HTML с цифрой
+
+        
+        /*
+        ** Инверторы
+        ** \D - не цифра
+        ** \S - не пробел
+        ** \W - не слово (сюда подходят русские буквы)
+        */
+
+        var patternPoint= /./ //поиск любого символа кроме перевода строки \n
+
+        /*
+        ** Специальные символы - . () / \ и др.
+        */
+
+        /*
+        ** [] - поиск в наборе одного из символов
+        ** [-] - поиск в диапазоне - [0-9]
+        ** - ^ -кроме (инвертор)
+        ** + - один символ и более
+        */
+
+        var nameStr="@mail test@mail.ru mail.ru abzalov90@mail.ru";
+
+        console.log(nameStr.match(/[a-zA-Z_0-9]+@[a-z]+\.\w+/g));
+
+
+
+    </script>
+
+</body>
+
+</html>

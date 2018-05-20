@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+
+
+    <script>
+    //https://www.youtube.com/watch?v=xSNPwEGhY0Q&index=3&list=PLOpdT8GIZ4XX5regE8svPP97VarRqSeAD
+
+    var kam="1990 - год, в котором я родился, а год в котором я пошел в школу 1997"
+
+    var pattern=/\d+/g;
+    console.log(kam.match(pattern));
+
+    var kamil="1990 - год, в котором я родился, \n1997 а год в котором я пошел в школу 2005";
+
+    // m - флаг полнотекстового поиска
+    var patternTwo=/^\d+/gm;
+    console.log(kamil.match(patternTwo));
+
+    // | - вариация или поиск фраз
+
+    var teams="Я болею за Реал, Баварию и Арсенал";
+    var patternThree= /Реал|Баварию|Арсенал/g;
+
+    console.log(teams.match(patternThree));
+
+    var str="jsjsjs";
+    var patternFour=/(js)/gi;
+
+    console.log(str.match(patternFour));
+
+    var anotherStr= "jsjsjs javascript";
+
+    var patternFive=/(js)+ (\w+)/g
+    console.log(anotherStr.match(patternFive));
+
+    </script>
+
+</body>
+
+</html>
